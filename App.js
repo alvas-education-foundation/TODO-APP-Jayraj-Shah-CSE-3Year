@@ -1,5 +1,13 @@
 import React from "react";
-import { StyleSheet, Text, View, TextInput, Button } from "react-native";
+import Todos from "./Todos";
+import {
+  StyleSheet,
+  Text,
+  View,
+  TextInput,
+  Button,
+  ScrollView,
+} from "react-native";
 
 export default function App() {
   return (
@@ -13,6 +21,11 @@ export default function App() {
           <Button title="ADD" color="#F65058FF" />
         </View>
       </View>
+      <ScrollView style={styles.scrollView}>
+        <Todos />
+        <Todos />
+        <Todos />
+      </ScrollView>
     </View>
   );
 }
@@ -45,6 +58,7 @@ const styles = StyleSheet.create({
     padding: 10,
     justifyContent: "space-around",
     alignItems: "center",
+    marginBottom: 20,
   },
   textInput: {
     width: "80%",
@@ -53,5 +67,8 @@ const styles = StyleSheet.create({
     margin: 2,
     borderBottomWidth: 1,
     borderBottomColor: "#28334AFF",
+  },
+  scrollView: {
+    backgroundColor: "#0f0",
   },
 });
